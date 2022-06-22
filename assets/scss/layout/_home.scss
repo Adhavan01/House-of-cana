@@ -1,0 +1,136 @@
+@use  "../abstracts/brakingpoint" as mix;
+
+//start #home
+.home{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 30px;
+
+     //response xs 
+         @include mix.response(xs)
+           {
+             background-color:transparent;
+             padding: 60px 20px 5px;
+             flex-direction: column;
+             font-size: smaller;
+           }
+
+            //response s 
+         @include mix.response(s){
+          background-color:transparent;
+          padding: 70px 20px 5px;
+          flex-direction: column;
+          font-size: smaller;
+         }
+
+            //response l
+            @include mix.response(l){
+              background-color:transparent;
+              padding: 5%;
+              flex-direction: row;
+             }
+
+    &_title{
+        display: block;
+        text-align: center;
+    }
+    
+    &_h1{
+        font-weight: bolder;
+        font-size: 3rem;
+        
+        
+             //response xs 
+               @include mix.response(xs)
+                  {
+                font-size: 2rem;
+                  }
+
+                  //response xl 
+               @include mix.response(xl)
+               {
+             font-size: 4rem;
+               }
+         }
+
+    &_h3{
+
+            @include mix.response(xs)
+            {
+              font-size: 1rem;
+             }
+
+             @include mix.response(xl)
+            {
+              font-size:x-large;
+             }
+        }
+
+        &_p{
+          @include mix.response(xs)
+          {
+            font-size:small;
+            padding: 5px;
+           }
+          
+          @include mix.response(xl)
+          {
+            font-size:larger;
+            padding: 15px;
+           }
+
+        }
+
+    &_btn{
+        padding: 7px;
+        background-color: rgb(75, 74, 74);
+        color: rgb(249, 252, 252);
+        font-weight: bolder;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        transition: 300ms;
+
+         
+        @include mix.response(xs)
+          {
+            font-size:small;
+            padding: 5px;
+            border-radius: 10px;
+           }
+        @include mix.response(xl)
+          {
+            font-size:larger;
+            padding: 15px;
+            border-radius: 15px;
+           }
+
+        &:hover{
+            background-color: $primeColor;
+        }
+    }
+
+    &_hero{
+        //response xs 
+        @include mix.response(xs)
+        {
+          width: 200px;
+        }
+
+        //response s 
+        @include mix.response(s)
+        {
+          width: 300px;
+        }
+
+        //response xl 
+        @include mix.response(xl)
+        {
+          width: 400px;
+        }
+
+    }
+
+}
+//end #home

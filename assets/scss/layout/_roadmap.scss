@@ -1,0 +1,202 @@
+
+@use  "../abstracts/brakingpoint" as mix;
+
+.roadmap{
+
+    text-align: center;
+    padding: 10%;
+    @include mix.response(xs){
+        margin-top: 12%;
+    }
+    @include mix.response(s){
+        margin-top: 10% 5%;
+    }
+
+    &_heading{
+    h2{
+        letter-spacing: 5px;
+    }
+    h4{
+        letter-spacing: 2px;
+    }
+
+    @include mix.response(xs){
+        font-size:small;
+    }
+
+    @include mix.response(l){
+        font-size:x-large;
+    }
+  }
+
+    .heading_line{
+        background-image: linear-gradient(to right,rgb(26, 15, 88),rgb(12, 12, 255),rgb(128, 0, 111));
+        width: 70px;
+        height: 5px;
+        margin: auto;
+        border-radius: 5px;
+
+        @include mix.response(l){
+            width: 100px;
+        }
+    }
+
+
+    &_container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5%;
+
+       @include mix.response(xs){
+        padding-top: 15%;
+        flex-direction: column;
+        margin: auto;
+        
+    }
+
+    // @include mix.response(l){
+    //     padding-top: 15%;
+    //     //flex-direction: row;
+    //     margin: auto;
+        
+    // }
+
+    @include mix.response(xl){
+        margin-top: 7%;
+        padding: 20px;
+    }
+
+    }
+
+    &_image{
+        position: relative;
+       // padding: 10px;
+        margin: auto;
+        cursor: pointer;
+        filter: grayscale(100%);
+        transition: 500ms;
+
+        // @include mix.response(s){
+        //     width: 75px;
+        //     left: -7%;
+        //     margin: auto;
+        //     height: px;
+        
+        // }
+        
+
+        // @include mix.response(l){
+        //     width: 5px;
+        //     left: -7%;
+        //     margin: auto;
+        //     height: 9px;
+        
+        // }
+
+        &:hover{
+            filter: grayscale(0%);
+        }
+
+        &:hover .road_img_ani::after{
+            animation: rotating_ani 5000ms linear infinite;
+        }
+
+    .road_img_ani {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        padding: 15px 5px;
+        margin: 0 auto 25px;
+
+        
+        .img{
+            position: relative;
+        }
+// dot
+        &::after{
+            position: absolute;
+            content: "";
+            border: 3px dotted rgb(58, 38, 235);
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            top: 0%;
+            right: 0px;
+            margin:auto;
+            align-items: center;
+        
+        }
+
+        
+
+    }
+
+    
+    .roadmap_img_text{
+        margin: 20px;
+        color: rgb(241, 101, 101);
+        width: fit-content;
+
+        @include mix.response(s){
+            font-size: small;
+        }
+        @include mix.response(l){
+            font-size: large;
+        }
+
+        p{
+            padding-top: 7px;
+          //  width: min-content;
+            color: $primeColor;
+
+           
+        }
+    }
+
+    // arrow
+    &:not(:last-child):after{
+        position: absolute;
+        font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f101";
+        font-size: 25px;
+        top: 35%;
+        left: 100%;
+        margin: auto;
+
+        @include mix.response(xs){
+            display: none;
+        }
+        // @include mix.response(s){
+        //     display: none;
+        // }
+        // @include mix.response(s){
+        //     display:block;
+        // }
+    }
+
+    &:hover:not(:last-child):after{
+        left: 105%;
+        color: rgb(19, 250, 88);
+        transition: 500ms;
+    }
+
+    &:hover:last-child::after{
+        position: absolute;
+        content: "";
+        font-family:"Font Awesome 6 Free";
+        top: 35%;
+        left: 120%;
+    }
+     
+}
+}
+
+@keyframes rotating_ani {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}

@@ -1,0 +1,53 @@
+@use "../abstracts/brakingpoint" as mix;
+
+.foot{
+    bottom: 0%;
+    position: fixed;
+    width: 100%;
+
+     //response xs 
+     @include mix.response(s)
+     {
+      position: relative;
+     }
+      //response xs 
+      @include mix.response(l)
+      {
+       position: fixed;
+      }
+}
+
+.footer{
+    background-color:$primeColor;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    align-items: flex-end;
+
+    //response xs 
+    @include mix.response(xs)
+    {
+      padding: 3px;
+      font-size:x-small;
+      bottom: 0px;
+    }
+
+    //response xl
+    @include mix.response(xl)
+    {
+      padding: 8px;
+      font-size:larger;
+      bottom: 0px;
+    }
+}
+
+.social_media{
+    margin: 0px 5px;
+    color: black;
+    &:hover{
+        text-shadow: 2px 2px 5px rgb(41, 31, 31);
+    }
+   
+}

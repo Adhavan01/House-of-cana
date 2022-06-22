@@ -1,0 +1,184 @@
+@use  "../abstracts/brakingpoint" as mix;
+// Start header
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image:linear-gradient(to right,#83EAF1,#63A4FF);
+    padding:1% 10%;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    z-index: 10;
+    position: fixed;
+
+@include mix.response(l){ 
+    padding: 0% 10%;
+}
+
+
+    &_brandName{
+        color:$primeColor;
+        @include mix.response(l){  
+            font-size:large; 
+        }
+        @include mix.response(xl){  
+
+            padding: 15px;
+            font-size:x-large; 
+        }
+    }
+
+    &_nav{
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        @include mix.response(xs){ 
+            @include mix.mobile_screen();
+            display: none;
+        }
+        @include mix.response(s,"s-m"){ 
+            display: none;
+            @include mix.mobile_screen();
+        }
+       
+        @include mix.response(l){ 
+            padding: 1% 10%;
+            display: flex;
+        }
+       
+
+
+    //     @include mix.response(xs){    
+    //             display: none;
+    //             background-color: rgb(10, 247, 247);
+    //             position: fixed;
+    //             width: 100vw;
+    //             height: 100vh;
+    //             left: 0%;
+    //             text-align: center;
+    //             padding: 15%;
+    //             //margin-top: 10%;
+    //             top: -110%;
+    //             //z-index: 1;
+    //             transition: 500ms;
+
+    //             &.show{
+    //                 display: block;
+    //                 top: 0%;
+    //                 z-index: -1;
+    //             }
+
+    //    }
+
+    //     @include mix.response(s){    
+    //         display: none;
+    //         background-color: rgb(10, 247, 247);
+    //         position: fixed;
+    //         width: 100vw;
+    //         height: 100vh;
+    //         left: 0%;
+    //         text-align: center;
+    //         padding: 15%;
+    //         //margin-top: 5%;
+    //         top: -110%;
+    //         z-index: 1;
+    //         transition: 500ms;
+
+    //         &.show{
+    //             display: block;
+    //             top: 0%;
+    //             z-index: -1;
+    //         }
+
+    // }
+
+    // @include mix.response(l){  
+    //     display: flex;
+    //     background-color: transparent;
+    //     position:fixed;
+    //     width: auto;
+    //     height: auto;
+    //     left: 100;
+    //     text-align: center;
+    //     padding:0;
+    //     //margin-top: 5%;
+    //     top: 0%;
+    //     z-index: auto;
+    //     transition: 0ms;
+    //     z-index: 1;
+    //     &.show{
+    //         display: none;
+    //         top: 0%;
+
+    //     }
+    // }
+        
+    }
+    &_list{
+        padding: 10px;
+        list-style: none;
+        transition: 300ms;
+
+        @include mix.response(xs){  
+
+            padding: 25px;
+           
+        }
+        @include mix.response(s){  
+
+            padding: 5% 10px;
+            font-size: large;
+           
+           
+        }
+        @include mix.response(l){  
+
+            padding: 15px;
+            font-size: large; 
+        }
+        @include mix.response(xl){  
+
+            padding: 15px;
+            font-size:x-large; 
+        }
+
+        a:hover{
+            color:$primeColor;
+        }
+        .active{
+            color:$primeColor;
+        }
+        
+    }
+    &_nav_btn{
+        padding: 5px;
+        color: darkcyan;
+        font-weight: bolder;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        transition: 300ms;
+
+        &:hover{
+            background-color: $primeColor;
+        }
+    
+    }
+}
+
+.xs_nav_icon{
+    color: $primeColor;
+    // @include mix.response(s){display: none;}
+//     @include mix.response(l){display: none;}
+//    // @include mix.response(xl){display: none;}
+    
+}
+
+#nav{
+    @include mix.response(m){display: none;}
+  @include mix.response(l){display: none;}
+ @include mix.response(xl){display: none;}
+}
+// end header
+

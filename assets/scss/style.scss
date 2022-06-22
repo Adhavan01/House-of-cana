@@ -1,0 +1,27 @@
+//braking point
+@import "./abstracts/brakingpoint";
+
+// base => global
+@import "./base/global";
+
+// variables => brandName animation => background animation
+@import "./abstracts/variable";
+
+//content 
+@import "./content/content";
+
+//layout
+
+// => header
+@import "./layout/header";
+// => #home 
+@import "./layout/home";
+// => #about
+@import "./layout/about";
+//=> #roadmap
+@import "./layout/roadmap";
+//=> #contact
+@import "./layout/contact"; @import "./layout/contact-chat";
+//=> #footer
+@import "./layout/footer";
+

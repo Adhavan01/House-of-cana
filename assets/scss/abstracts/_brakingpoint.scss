@@ -1,0 +1,101 @@
+// // X-Small devices (portrait phones, less than 576px)
+// // No media query for `xs` since this is the default in Bootstrap
+// @media (max-width: 576px) 
+//  { *{background-color:red;}
+    
+//   }
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) { *{background-color:rgb(47, 0, 255);} }
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) { *{background-color:rgb(0, 255, 76);} }
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) { *{background-color:rgb(255, 196, 0);} }
+
+// // X-Large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { *{background-color:rgb(251, 255, 0);} }
+
+// // XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: 1400px) { *{background-color:rgb(255, 0, 234);}}
+
+
+
+@mixin response($breakingboint, $scoop:""){
+
+    @if $breakingboint == xs {
+
+@media only screen and (max-width: 576px) {
+    @content;
+  }
+  
+    }
+
+    @else if $breakingboint ==s {
+      @if $scoop=="s-m" {
+
+        @media only screen and (min-width: 576px) and (max-width:765px) {
+            @content;
+          
+          }
+          
+        } @else if $breakingboint == m {
+
+          @media only screen and (min-width: 768px) {
+              @content;
+              
+            }
+            
+              
+            }
+          }@else if $breakingboint == m {
+
+              @media only screen and (min-width: 768px) {
+                  @content;
+
+            }
+          }@else if $breakingboint == l {
+
+          @media only screen and (min-width: 992px) {
+            @content;
+            
+          }
+          
+            }
+                   
+                            @else if $breakingboint == xl {
+
+                                @media only screen and (min-width: 1400px) {
+                                    @content;
+                                  }
+                                  
+                                    }
+                                    @else if $breakingboint == xxl {
+
+                                        @media only screen and (min-width: 1600px) {
+                                            @content;
+                                          }
+                                          
+                                            }
+    
+}
+
+
+@mixin mobile_screen {
+  background-color: rgb(10, 247, 247);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0%;
+  text-align: center;
+  padding: 15%;
+  top: -110%;
+  transition: 500ms;
+
+  &.show{
+      display: block;
+      top: 0%;
+      z-index: -1;
+  }
+  
+}
